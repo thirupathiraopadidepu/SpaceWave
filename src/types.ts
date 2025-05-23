@@ -3,7 +3,7 @@ export interface Property {
   title: string;
   description: string;
   imageUrl: string;
-  type: 'commercial' | 'residential';
+  type: "commercial" | "residential";
   features?: string[];
 }
 
@@ -12,4 +12,5 @@ export interface Service {
   title: string;
   description: string;
   icon: string;
+  imageUrl?: string;
 }

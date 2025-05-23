@@ -31,7 +31,7 @@ export default function Home() {
               Commercial. Residential. Customized to You.
             </p> */}
             <div className="flex flex-wrap gap-4">
-              <Link to="/properties" className="btn btn-primary">
+              <Link to="/services" className="btn btn-primary">
                 Explore Our Listings
               </Link>
               <Link

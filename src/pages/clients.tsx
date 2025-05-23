@@ -1,72 +1,96 @@
 import { motion } from "framer-motion";
 
+const clientLogos = [
+  "/clientlogos/8.-BACKOFFICE-I-T-SERVICES-INDIA-PRIVATE-LIMITED-logo.png",
+  "/clientlogos/avantel-logo.jpeg",
+  "/clientlogos/Blue-star-logo.jpeg",
+  "/clientlogos/Gowra.jpeg",
+  "/clientlogos/GSPANN-Logo.png",
+  "/clientlogos/HR-Block-Logo.jpeg",
+  "/clientlogos/Iffco-Tokio-Logo.png",
+  "/clientlogos/Incor-logo.jpeg",
+  "/clientlogos/infosun-logo.png",
+  "/clientlogos/launchship-logo.png",
+  "/clientlogos/LT-Logo.png",
+  "/clientlogos/Mantri-devolepers-Logo.jpeg",
+  "/clientlogos/Meslova.jpeg",
+  "/clientlogos/MobileIron-logo.png",
+  "/clientlogos/My-Smart-price-logo.png",
+  "/clientlogos/myhome-group-logo.jpeg",
+  "/clientlogos/Navayuga-logo.png",
+  "/clientlogos/Phoenix-group-logo.jpeg",
+  "/clientlogos/Posidex-logo.png",
+  "/clientlogos/Punjlloyd.jpeg",
+  "/clientlogos/S-Squrare-logo.jpeg",
+  "/clientlogos/Sai-Surya-Developer-logo.jpeg",
+  "/clientlogos/Techwave-logo.jpeg",
+  "/clientlogos/V-soft-logo-1024x538.jpeg",
+  "/clientlogos/Vamsiram-Builders-Logo.jpeg",
+  "/clientlogos/Vasavi-Group-Logo.jpeg",
+  "/clientlogos/vatika-group-logo.jpeg",
+  "/clientlogos/Webfurther.jpeg",
+];
+
 const Clients = () => {
-  const clientLogos = [
-    "https://upload.wikimedia.org/wikipedia/commons/5/50/DLF_Logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Godrej_Industries_Logo.svg/2560px-Godrej_Industries_Logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/commons/f/f4/Sobha_Developers_logo.png",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/TATA_Group_logo.svg/2560px-TATA_Group_logo.svg.png",
-    "https://upload.wikimedia.org/wikipedia/en/thumb/5/51/Prestige_Group_logo.svg/1280px-Prestige_Group_logo.svg.png",
-  ];
-
   return (
-    <div className="bg-white text-gray-900 font-sans">
-      {/* Hero Section */}
-      <section className="relative w-full h-48 md:h-64">
-        <img
-          src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt="Modern office interior"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute mt-10 inset-0  bg-opacity-50 flex flex-col justify-center items-center text-white text-center">
-          <motion.h1
-            className="text-2xl md:text-3xl font-bold text-white"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Our Trusted Clients
-          </motion.h1>
-          <motion.p
-            className="text-sm md:text-lg mt-2 max-w-xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            We proudly collaborate with leading real estate developers and
-            brands across India.
-          </motion.p>
-        </div>
-      </section>
+    <div
+      className="relative text-white min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: "url('/clientlogos/clientbg.png')" }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 z-0"></div>
 
-      {/* Clients Marquee */}
-      <section className="overflow-hidden bg-gray-100 py-6 border-y border-gray-300">
-        <div className="animate-marquee whitespace-nowrap flex items-center">
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-20">
+        <motion.h1
+          className="text-2xl md:text-3xl font-bold mt-10"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Our Trusted Clients
+        </motion.h1>
+
+        <motion.p
+          className="text-md md:text-lg max-w-3xl mt-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+        >
+          We proudly collaborate with leading real estate developers and brands
+          across India.
+        </motion.p>
+
+        {/* Marquee logo strip */}
+        <div className="overflow-hidden mt-10 w-full py-4">
+          <div className="flex animate-marquee space-x-8 whitespace-nowrap">
+            {clientLogos.map((logo, index) => (
+              <img
+                key={index}
+                src={logo}
+                alt={`Client Logo ${index + 1}`}
+                className="h-12 md:h-14 object-contain  transition duration-300"
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Logos Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-12  p-6 ">
           {clientLogos.map((logo, index) => (
-            <img
+            <div
               key={index}
-              src={logo}
-              alt={`Client Logo ${index + 1}`}
-              className="mx-12 h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-            />
+              className="flex items-center justify-center p-3 bg-white/20 rounded-lg"
+            >
+              <img
+                src={logo}
+                alt={`Client Logo ${index + 1}`}
+                className="h-12 md:h-16 object-contain transition duration-300"
+              />
+            </div>
           ))}
         </div>
-      </section>
-
-      {/* Client Highlights */}
-      <section className="py-16 px-6 max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">
-          Why Top Clients Choose SpaceWave
-        </h2>
-        <p className="text-gray-700 mb-4">
-          We've partnered with over 50+ reputed developers and real estate
-          brands to deliver value across Hyderabad and beyond.
-        </p>
-        <p className="text-gray-700">
-          Our transparent approach, customized property solutions, and focus on
-          client satisfaction make us a preferred real estate partner.
-        </p>
-      </section>
+      </div>
     </div>
   );
 };

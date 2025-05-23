@@ -182,67 +182,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      {/* Team */}
-      <section className="py-20">
-        <div className="container">
-          <SectionHeader
-            title="Our Leadership Team"
-            subtitle="Meet the experts behind SpaceWave's success"
-            centered
-          />
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="mb-4 relative">
-                <img
-                  src="https://images.pexels.com/photos/5717549/pexels-photo-5717549.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                  alt="Team Member"
-                  className="w-64 h-64 object-cover rounded-full mx-auto"
-                />
-              </div>
-              <h3 className="font-serif text-xl font-semibold">Priya Sharma</h3>
-              <p className="text-primary-600 mb-2">Founder & CEO</p>
-              <p className="text-neutral-600 max-w-xs mx-auto">
-                With 20+ years in real estate, Priya brings vision and strategic
-                leadership to SpaceWave.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="mb-4">
-                <img
-                  src="https://images.pexels.com/photos/7148384/pexels-photo-7148384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                  alt="Team Member"
-                  className="w-64 h-64 object-cover rounded-full mx-auto"
-                />
-              </div>
-              <h3 className="font-serif text-xl font-semibold">Raj Patel</h3>
-              <p className="text-primary-600 mb-2">Chief Operations Officer</p>
-              <p className="text-neutral-600 max-w-xs mx-auto">
-                Raj oversees all operations, ensuring exceptional service
-                delivery and client satisfaction.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="mb-4">
-                <img
-                  src="https://images.pexels.com/photos/8189598/pexels-photo-8189598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                  alt="Team Member"
-                  className="w-64 h-64 object-cover rounded-full mx-auto"
-                />
-              </div>
-              <h3 className="font-serif text-xl font-semibold">Ananya Reddy</h3>
-              <p className="text-primary-600 mb-2">Head of Design</p>
-              <p className="text-neutral-600 max-w-xs mx-auto">
-                Ananya leads our interior design team, transforming spaces with
-                creativity and functionality.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

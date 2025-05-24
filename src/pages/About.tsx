@@ -14,50 +14,87 @@ export default function About() {
       </section>
 
       {/* Our Story */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-br from-primary-50 via-white to-primary-100 relative overflow-hidden">
+        {/* Decorative background shapes */}
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-sky-200 rounded-full opacity-30 blur-3xl z-0 animate-pulse" />
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-300 rounded-full opacity-20 blur-3xl z-0 animate-pulse" />
         <div className="container relative z-20 mt-10">
-          <div className="max-w-3xl mx-auto text-center bg-white/80 backdrop-blur-md rounded-xl shadow-2xl p-10 border border-primary-100 animate-fade-in-up transition-all duration-700">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 animate-slide-in-down">
+          <div className="max-w-3xl mx-auto text-center p-10 bg-white/80 rounded-3xl shadow-2xl backdrop-blur-md border border-primary-100 animate-fade-in-up">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-primary-700 drop-shadow-lg">
               Who We Are
             </h1>
-            <p className="text-xl mb-10 animate-fade-in">
-              Since 2009, SpaceWave has been transforming the real estate
-              landscape with innovative solutions and exceptional service.
+            <p className="text-xl mb-10 animate-fade-in text-neutral-700">
+              Since 2009,{" "}
+              <span className="font-bold text-primary-600">SpaceWave</span> has
+              been transforming the real estate landscape with innovative
+              solutions and exceptional service.
             </p>
           </div>
         </div>
-        <div className="container">
+        <div className="container mt-12">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="relative group">
               <img
                 src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                 alt="SpaceWave Team"
-                className="rounded-lg shadow-xl w-full h-auto"
+                className="rounded-2xl shadow-2xl w-full h-auto transform group-hover:scale-105 transition-transform duration-500 border-4 border-primary-100"
               />
+              <div className="absolute bottom-4 left-4 bg-white/80 px-4 py-2 rounded-lg shadow-md text-primary-700 font-semibold text-sm backdrop-blur-md">
+                Our Team at Work
+              </div>
             </div>
-            <div>
+            <div className="relative z-10 animate-fade-in-up">
               <SectionHeader
                 title="Our Journey"
                 subtitle="From a small startup to a leader in the real estate industry"
               />
-              <p className="text-neutral-600 mb-6">
-                Founded in 2009 in Hyderabad, SpaceWave began with a vision to
-                transform how people experience real estate. What started as a
-                small team of passionate professionals has grown into a
-                full-service real estate company with a reputation for
-                excellence and innovation.
-              </p>
-              <p className="text-neutral-600 mb-6">
-                Our headquarters remain in Hyderabad, but our impact extends
-                throughout the region. With over 200 successful transactions and
-                more than 20 million square feet of space transformed, we've
-                built a legacy of trust and results.
-              </p>
-              <p className="text-neutral-600">
-                Today, we continue to evolve and expand our services while
-                staying true to our founding principles of integrity,
-                excellence, and client-focused solutions.
-              </p>
+              <div className="space-y-6 text-neutral-700 text-lg">
+                <p>
+                  <span className="font-bold text-primary-700">
+                    Founded in 2009
+                  </span>{" "}
+                  in Hyderabad, SpaceWave began with a vision to transform how
+                  people experience real estate. What started as a small team of
+                  passionate professionals has grown into a full-service real
+                  estate company with a reputation for excellence and
+                  innovation.
+                </p>
+                <p>
+                  Our headquarters remain in Hyderabad, but our impact extends
+                  throughout the region. With{" "}
+                  <span className="font-bold text-primary-600">
+                    200+ successful transactions
+                  </span>{" "}
+                  and more than{" "}
+                  <span className="font-bold text-primary-600">
+                    20 million sq. ft.
+                  </span>{" "}
+                  of space transformed, we've built a legacy of trust and
+                  results.
+                </p>
+                <p>
+                  Today, we continue to evolve and expand our services while
+                  staying true to our founding principles of{" "}
+                  <span className="italic text-primary-700">
+                    integrity, excellence, and client-focused solutions
+                  </span>
+                  .
+                </p>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <span className="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full font-semibold text-sm shadow">
+                  Innovation
+                </span>
+                <span className="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full font-semibold text-sm shadow">
+                  Trust
+                </span>
+                <span className="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full font-semibold text-sm shadow">
+                  Excellence
+                </span>
+                <span className="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full font-semibold text-sm shadow">
+                  Client Focus
+                </span>
+              </div>
             </div>
           </div>
         </div>

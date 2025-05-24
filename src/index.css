@@ -134,3 +134,14 @@
   display: flex;
   animation: marquee 30s linear infinite;
 }
+@keyframes slide-x-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-slide-x-slow {
+  animation: slide-x-slow 30s linear infinite;
+}

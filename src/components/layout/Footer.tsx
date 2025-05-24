@@ -58,7 +58,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-xl font-semibold mb-4">
+            <h3 className="font-serif text-xl font-semibold mb-4 text-white">
               Navigation
             </h3>
             <ul className="space-y-2">
@@ -76,7 +76,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-xl font-semibold mb-4">Services</h3>
+            <h3 className="font-serif text-xl font-semibold mb-4 text-white">
+              Services
+            </h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -114,7 +116,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-xl font-semibold mb-4">
+            <h3 className="font-serif text-xl font-semibold mb-4 text-white">
               Contact Us
             </h3>
             <address className="not-italic text-neutral-400">

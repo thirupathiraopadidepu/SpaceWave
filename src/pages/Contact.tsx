@@ -11,6 +11,7 @@ import {
   Instagram,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -32,16 +33,51 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
-    setFormSubmitted(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
-    setTimeout(() => setFormSubmitted(false), 5000);
+    // Replace these with your EmailJS credentials
+    const SERVICE_ID = "your_service_id";
+    const OWNER_TEMPLATE_ID = "your_owner_template_id";
+    const CUSTOMER_TEMPLATE_ID = "your_customer_template_id";
+    const USER_ID = "your_public_key";
+    // Send email to website owner
+    emailjs
+      .send(
+        SERVICE_ID,
+        OWNER_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        USER_ID
+      )
+      .then(
+        () => {
+          // Send acknowledgment to customer
+          emailjs.send(
+            SERVICE_ID,
+            CUSTOMER_TEMPLATE_ID,
+            {
+              to_name: formData.name,
+              to_email: formData.email,
+            },
+            USER_ID
+          );
+          setFormSubmitted(true);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+          });
+          setTimeout(() => setFormSubmitted(false), 5000);
+        },
+        (error) => {
+          alert("Failed to send message. Please try again later.");
+        }
+      );
   };
 
   return (
@@ -191,20 +227,95 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Google Maps Section */}
-      <section className="w-full h-[400px] md:h-[500px] relative">
-        <div className="absolute inset-0">
-          <iframe
-            title="Google Map Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.266787519406!2d78.386181!3d17.4469404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910d8d1c4f8b%3A0x6ef1b184af90fa3f!2sCapital%20Park!5e0!3m2!1sen!2sin!4v1748009876095!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="rounded-2xl shadow-lg"
-          ></iframe>
+      {/* Our Offices Section */}
+      <section className="py-20 bg-gradient-to-br from-primary-50 via-white to-primary-100 relative overflow-hidden">
+        <div className="container">
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-700 mb-4 text-center">
+            Our Offices
+          </h2>
+          <p className="text-neutral-700 text-lg mb-10 text-center max-w-2xl mx-auto">
+            Visit us at our headquarters or connect with our regional offices
+            for personalized assistance and expert guidance.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-500">
+              <img
+                src="/wedeal/officespace.jpg"
+                alt="Hyderabad Office"
+                className="h-20 w-20 mb-4 rounded-full object-cover shadow"
+              />
+              <h3 className="font-serif text-xl font-bold text-primary-700 mb-2">
+                Hyderabad HQ
+              </h3>
+              <p className="text-neutral-600">
+                Jain Sadguru Image’s Capital Park, Office No. 503, 5th Floor,
+                Madhapur, Hyderabad - 500081
+              </p>
+              <p className="text-primary-600 mt-2">+91 94411 85884</p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-500">
+              <img
+                src="/wedeal/retail.jpg"
+                alt="Bangalore Office"
+                className="h-20 w-20 mb-4 rounded-full object-cover shadow"
+              />
+              <h3 className="font-serif text-xl font-bold text-primary-700 mb-2">
+                Bangalore
+              </h3>
+              <p className="text-neutral-600">Coming Soon</p>
+              <p className="text-primary-600 mt-2">info@spacewave.in</p>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-500">
+              <img
+                src="/wedeal/villa1.jpg"
+                alt="Chennai Office"
+                className="h-20 w-20 mb-4 rounded-full object-cover shadow"
+              />
+              <h3 className="font-serif text-xl font-bold text-primary-700 mb-2">
+                Chennai
+              </h3>
+              <p className="text-neutral-600">Coming Soon</p>
+              <p className="text-primary-600 mt-2">info@spacewave.in</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Highlights Section */}
+      <section className="py-20 bg-gradient-to-br from-sky-400 to-blue-400 text-white relative overflow-hidden">
+        <div className="container">
+          <div className="grid md:grid-cols-3 gap-10 text-center">
+            <div className="bg-primary-800/80 rounded-2xl shadow-lg p-8 flex flex-col items-center hover:scale-105 transition-transform duration-500">
+              <MapPin size={36} className="mb-4 text-primary-200" />
+              <h3 className="font-serif text-xl font-bold mb-2">
+                Central Location
+              </h3>
+              <p>
+                Our office is easily accessible in the heart of Hyderabad’s
+                business district.
+              </p>
+            </div>
+            <div className="bg-primary-800/80 rounded-2xl shadow-lg p-8 flex flex-col items-center hover:scale-105 transition-transform duration-500">
+              <Phone size={36} className="mb-4 text-primary-200" />
+              <h3 className="font-serif text-xl font-bold mb-2">
+                Quick Response
+              </h3>
+              <p>
+                We respond to all inquiries within 24 hours, ensuring you get
+                the support you need.
+              </p>
+            </div>
+            <div className="bg-primary-800/80 rounded-2xl shadow-lg p-8 flex flex-col items-center hover:scale-105 transition-transform duration-500">
+              <Mail size={36} className="mb-4 text-primary-200" />
+              <h3 className="font-serif text-xl font-bold mb-2">
+                Expert Guidance
+              </h3>
+              <p>
+                Our experienced team is ready to assist you with any real estate
+                questions or needs.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

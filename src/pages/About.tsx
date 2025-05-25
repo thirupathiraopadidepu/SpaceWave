@@ -190,7 +190,7 @@ export default function About() {
       </section>
 
       {/* Stats */}
-      <section className="py-20 bg-primary-600 text-white">
+      <section className="py-20 bg-gradient-to-br from-sky-500 to-blue-500 text-white">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -215,6 +215,151 @@ export default function About() {
               />
               <p className="text-4xl font-serif font-bold mb-2">14</p>
               <p className="text-primary-100">Years of Excellence</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Values Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="container">
+          <SectionHeader
+            title="Our Values"
+            subtitle="What Drives SpaceWave Forward"
+            centered
+          />
+          <div className="grid md:grid-cols-3 gap-10 mt-12">
+            <div className="bg-primary-50 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-500">
+              <img
+                src="/services/Real Estate Consultation.jpg"
+                alt="Innovation"
+                className="h-20 w-20 mb-4 rounded-full object-cover shadow"
+              />
+              <h3 className="font-serif text-2xl font-bold text-primary-700 mb-2">
+                Innovation
+              </h3>
+              <p className="text-neutral-600">
+                We embrace new ideas and technology to deliver the best
+                solutions for our clients and stay ahead in the real estate
+                industry.
+              </p>
+            </div>
+            <div className="bg-primary-50 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-500">
+              <img
+                src="/services/Property.jpg"
+                alt="Integrity"
+                className="h-20 w-20 mb-4 rounded-full object-cover shadow"
+              />
+              <h3 className="font-serif text-2xl font-bold text-primary-700 mb-2">
+                Integrity
+              </h3>
+              <p className="text-neutral-600">
+                We believe in transparency, honesty, and ethical practices in
+                every transaction and relationship.
+              </p>
+            </div>
+            <div className="bg-primary-50 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-500">
+              <img
+                src="/services/Commercial.jpg"
+                alt="Client Focus"
+                className="h-20 w-20 mb-4 rounded-full object-cover shadow"
+              />
+              <h3 className="font-serif text-2xl font-bold text-primary-700 mb-2">
+                Client Focus
+              </h3>
+              <p className="text-neutral-600">
+                Our clients are at the heart of everything we do. We tailor our
+                services to meet their unique needs and exceed expectations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership Section */}
+      <section className="py-20 bg-gradient-to-br from-primary-100 via-white to-primary-50 relative overflow-hidden">
+        <div className="container">
+          <SectionHeader
+            title="Meet Our Leadership"
+            subtitle="Guiding SpaceWave to New Heights"
+            centered
+          />
+          <div className="grid md:grid-cols-2 gap-12 mt-12 items-center">
+            <div className="flex flex-col items-center text-center">
+              <img
+                src="/wedeal/villa1.jpg"
+                alt="Founder"
+                className="h-32 w-32 rounded-full object-cover shadow-lg mb-4 border-4 border-primary-200"
+              />
+              <h3 className="font-serif text-xl font-bold text-primary-700 mb-1">
+                Vasu
+              </h3>
+              <p className="text-primary-600 font-semibold mb-2">
+                Founder & CEO
+              </p>
+              <p className="text-neutral-600">
+                With over 20 years of experience in real estate, Vasu leads
+                SpaceWave with a vision for innovation and excellence.
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <img
+                src="/wedeal/retail.jpg"
+                alt="Co-Founder"
+                className="h-32 w-32 rounded-full object-cover shadow-lg mb-4 border-4 border-primary-200"
+              />
+              <h3 className="font-serif text-xl font-bold text-primary-700 mb-1">
+                S. Rao
+              </h3>
+              <p className="text-primary-600 font-semibold mb-2">
+                Co-Founder & Director
+              </p>
+              <p className="text-neutral-600">
+                Rao brings a wealth of expertise in client relations and
+                business development, ensuring every client receives
+                personalized attention.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-gradient-to-br from-sky-400 to-blue-400 text-white relative overflow-hidden">
+        <div className="container">
+          <SectionHeader
+            title="Why Choose SpaceWave?"
+            subtitle="Experience the Difference"
+            centered
+          />
+          <div className="grid md:grid-cols-3 gap-10 mt-12">
+            <div className="bg-primary-800/80 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-500">
+              <Building size={40} className="mb-4 text-primary-200" />
+              <h3 className="font-serif text-xl font-bold mb-2">
+                Comprehensive Services
+              </h3>
+              <p>
+                From consultation to property management, we offer end-to-end
+                real estate solutions under one roof.
+              </p>
+            </div>
+            <div className="bg-primary-800/80 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-500">
+              <TrendingUp size={40} className="mb-4 text-primary-200" />
+              <h3 className="font-serif text-xl font-bold mb-2">
+                Proven Track Record
+              </h3>
+              <p>
+                200+ successful transactions and 20M+ sq. ft. transformed—our
+                results speak for themselves.
+              </p>
+            </div>
+            <div className="bg-primary-800/80 rounded-2xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-500">
+              <Users size={40} className="mb-4 text-primary-200" />
+              <h3 className="font-serif text-xl font-bold mb-2">Expert Team</h3>
+              <p>
+                Our passionate professionals bring deep market knowledge and a
+                client-first approach to every project.
+              </p>
             </div>
           </div>
         </div>

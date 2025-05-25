@@ -47,7 +47,7 @@
   }
 
   .section-subtitle {
-    @apply text-lg text-neutral-600 max-w-3xl mb-10;
+    @apply text-lg text-white max-w-3xl mb-10;
   }
 
   .card {

@@ -1,5 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import emailjs from "emailjs-com";
+
+function useCountdown(hours: number) {
+  const [timeLeft, setTimeLeft] = useState(hours * 60 * 60); // in seconds
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, []);
+
+  const hoursLeft = Math.floor(timeLeft / 3600);
+  const minutesLeft = Math.floor((timeLeft % 3600) / 60);
+  const secondsLeft = timeLeft % 60;
+  return [hoursLeft, minutesLeft, secondsLeft] as const;
+}
 
 export default function EnquiryForm() {
   const [form, setForm] = useState({
@@ -55,6 +74,8 @@ export default function EnquiryForm() {
       );
   };
 
+  const [hours, minutes, seconds] = useCountdown(12); // 12 hours countdown
+
   if (!visible) return null;
 
   if (submitted) {
@@ -95,6 +116,20 @@ export default function EnquiryForm() {
           onSubmit={handleSubmit}
           className="bg-white/90 rounded-xl shadow-lg p-8 flex flex-col gap-4 animate-fade-in"
         >
+          <div className="mb-2 text-center">
+            <div className="text-lg font-semibold text-primary-700 mb-1">
+              Get your first consultation{" "}
+              <span className="text-green-600">FREE</span>!
+            </div>
+            <div className="text-sm text-gray-700 font-medium flex flex-col items-center">
+              <span>Offer ends in:</span>
+              <span className="font-mono text-xl text-red-600 mt-1">
+                {hours.toString().padStart(2, "0")}:
+                {minutes.toString().padStart(2, "0")}:
+                {seconds.toString().padStart(2, "0")}
+              </span>
+            </div>
+          </div>
           <h3 className="text-2xl font-bold text-primary-700 mb-2">
             Enquiry Form
           </h3>

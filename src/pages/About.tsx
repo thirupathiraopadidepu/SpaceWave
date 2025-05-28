@@ -101,7 +101,7 @@ export default function About() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-primary-50">
+      <section className="py-20 bg-primary-200 text-black">
         <div className="container">
           <SectionHeader
             title="Our Mission & Vision"

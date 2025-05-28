@@ -37,30 +37,39 @@ const Clients = () => {
       className="relative text-white min-h-screen bg-cover bg-center"
       style={{ backgroundImage: "url('/clientlogos/clientbg.png')" }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 z-0"></div>
+      {/* Hero Section */}
+      <section
+        className="relative w-full min-h-[320px] md:min-h-[400px] flex items-center justify-center bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/clientlogos/chsbg.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0  z-0" />
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-20 w-full">
+          <motion.h1
+            className="text-3xl md:text-4xl font-bold mt-10 text-white drop-shadow-lg"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Our Trusted Clients
+          </motion.h1>
+          <motion.p
+            className="text-md md:text-lg max-w-3xl mt-4 text-white"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            We proudly collaborate with leading real estate developers and
+            brands across India.
+          </motion.p>
+        </div>
+      </section>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-20">
-        <motion.h1
-          className="text-2xl md:text-3xl font-bold mt-10"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          Our Trusted Clients
-        </motion.h1>
-
-        <motion.p
-          className="text-md md:text-lg max-w-3xl mt-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          We proudly collaborate with leading real estate developers and brands
-          across India.
-        </motion.p>
-
         {/* Marquee logo strip */}
         <div className="overflow-hidden mt-10 w-full py-4">
           <div className="flex animate-marquee space-x-8 whitespace-nowrap">

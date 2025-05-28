@@ -11,6 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { MessageCircle, Phone, Mail } from "lucide-react";
 import EnquiryForm from "./components/ui/EnquiryForm";
 import { X } from "lucide-react";
+import Properties from "./pages/Properties";
 
 // Use a WhatsApp SVG icon since lucide-react does not export 'Whatsapp'
 const WhatsappIcon = (props: any) => (
@@ -98,6 +99,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/properties" element={<Properties />} />
             <Route path="/clients" element={<Clients />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

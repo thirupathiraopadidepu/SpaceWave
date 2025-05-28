@@ -3,11 +3,12 @@ import { NavLink } from "react-router-dom";
 import { Menu, X, Building } from "lucide-react";
 
 const navLinks = [
-  { path: "/", label: "Home" },
-  { path: "/about", label: "About" },
-  { path: "/services", label: "Services" },
-  { path: "/clients", label: "Clients" },
-  { path: "/contact", label: "Contact" },
+  { path: "/", label: "HOME" },
+  { path: "/about", label: "ABOUT" },
+  { path: "/services", label: "SERVICES" },
+  { path: "/properties", label: "PROPERTIES" },
+  { path: "/clients", label: "CLIENTS" },
+  { path: "/contact", label: "CONTACT" },
 ];
 
 export default function Navbar() {
@@ -40,7 +41,7 @@ export default function Navbar() {
           <img
             src="/SW_Logo-main.png"
             alt="SpaceWave Logo"
-            className="h-14 md:h-16 object-contain transition-all duration-300"
+            className="h-18 md:h-20 object-contain transition-all duration-300"
           />
         </NavLink>
 
@@ -71,15 +72,20 @@ export default function Navbar() {
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                isActive ? "navbar-link active" : "navbar-link"
+                `rainbow-button ${
+                  isActive ? "text-primary-600" : "text-neutral-900"
+                }`
               }
             >
               {link.label}
             </NavLink>
           ))}
-          <NavLink to="/contact" className="ml-4 btn btn-primary text-sm">
+          {/* <NavLink
+            to="/contact"
+            className="ml-4 btn btn-primary rainbow-button "
+          >
             Get in Touch
-          </NavLink>
+          </NavLink> */}
         </nav>
       </div>
 

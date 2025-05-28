@@ -55,7 +55,12 @@ export default function Services() {
         <div className="container relative z-10">
           <SectionHeader
             title="What We Offer"
-            subtitle="From finding the perfect property to designing your ideal space, we've got you covered"
+            subtitle={
+              <span className="text-black">
+                From finding the perfect property to designing your ideal space,
+                we've got you covered
+              </span>
+            }
             centered
           />
 
@@ -183,10 +188,14 @@ export default function Services() {
         style={{ backgroundImage: "url('/services/process.jpg')" }}
       >
         <div className="absolute inset-0 z-0"></div>
-        <div className="container relative z-10">
+        <div className="container relative z-10 text-black">
           <SectionHeader
             title="Our Process"
-            subtitle="How we work with you to deliver exceptional results"
+            subtitle={
+              <span className="text-black">
+                How we work with you to deliver exceptional results
+              </span>
+            }
             centered
           />
 

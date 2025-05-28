@@ -76,7 +76,7 @@
 }
 
 .navbar-link {
-  @apply relative px-3 py-2 text-neutral-800 hover:text-primary-600 transition-colors duration-300;
+  @apply relative px-3 py-2 text-black font-bold transition-colors duration-300;
 }
 
 .navbar-link.active {
@@ -144,4 +144,93 @@
 }
 .animate-slide-x-slow {
   animation: slide-x-slow 30s linear infinite;
+}
+@keyframes rainbowBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.rainbow-border {
+  position: relative;
+}
+
+.rainbow-border::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    270deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 400% 100%;
+  animation: rainbowBorder 4s linear infinite;
+  border-radius: 2px;
+}
+@keyframes animatedBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 400% 50%;
+  }
+}
+
+.rainbow-button {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: black;
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  z-index: 1;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.rainbow-button::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    270deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  background-size: 800% 800%;
+  animation: animatedBorder 4s linear infinite;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+.rainbow-button::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: white;
+  z-index: -1;
+  border-radius: 6px;
 }

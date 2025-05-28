@@ -139,6 +139,25 @@ export default function Contact() {
                 <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
               </li>
             </ul>
+            {/* Google Maps Embed */}
+            <div className="mt-8 flex justify-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15225.064678087563!2d78.38618!3d17.44697!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91501ae8f159%3A0x930010df33a47638!2sJain%20sadguru%20image's%20capital%20park%2C%20303B%2C%20VIP%20Hills%2C%20Jaihind%20Enclave%2C%20Madhapur%2C%20Hyderabad%2C%20Telangana%20500081%2C%20India!5e0!3m2!1sen!2sus!4v1748439779415!5m2!1sen!2sus"
+                width="100%"
+                height="180"
+                style={{
+                  border: 0,
+                  borderRadius: "12px",
+                  minWidth: "180px",
+                  maxWidth: "100%",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="SpaceWave Office Location"
+              ></iframe>
+            </div>
             <div className="mt-8">
               <h3 className="font-serif text-lg font-semibold mb-2 text-primary-700">
                 Follow Us

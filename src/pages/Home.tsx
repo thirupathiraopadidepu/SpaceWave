@@ -16,15 +16,18 @@ export default function Home() {
   return (
     <div className="page-transition">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center animated-bg">
-        <img
-          src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt="Luxury real estate"
-          className="animated-bg-image"
-        />
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Carousel Background */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <div className="w-full h-full">
+            <div className="absolute inset-0 w-full h-full">
+              <CarouselBgImages />
+            </div>
+          </div>
+        </div>
         <div className="container relative z-20">
           <div className="max-w-3xl">
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-lg">
               Find Your Perfect Space with SpaceWave
             </h1>
             {/* <p className="text-xl md:text-2xl mb-8 font-light text-white">
@@ -92,12 +95,17 @@ export default function Home() {
       </section>
 
       {/* We Deal Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-50 via-white to-primary-100 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-primary-50 via-white to-primary-100 relative overflow-hidden ">
         <div className="container">
           <SectionHeader
             title="We Deal In"
-            subtitle="Explore our diverse portfolio of property categories tailored to your needs"
-            centered
+            subtitle={
+              <span style={{ color: "#222" }}>
+                Explore our diverse portfolio of property categories tailored to
+                your needs
+              </span>
+            }
+            centered={false}
           />
           <div className="relative mt-12">
             {/* Carousel */}
@@ -206,7 +214,12 @@ export default function Home() {
         <div className="container relative z-10">
           <SectionHeader
             title="Featured Properties"
-            subtitle="Explore our selection of premium commercial and residential properties"
+            subtitle={
+              <span style={{ color: "#222" }}>
+                Explore our selection of premium commercial and residential
+                properties
+              </span>
+            }
             centered
           />
 
@@ -382,5 +395,32 @@ function RotatingCards() {
         </div>
       </div>
     </>
+  );
+}
+
+// Add this at the bottom of the file (before export default):
+function CarouselBgImages() {
+  const images = [
+    "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "/HomeHeroSection/hc.jpg",
+    "/HomeHeroSection/hc1.jpg",
+    "/HomeHeroSection/hc2.jpg",
+    "/HomeHeroSection/hc3.jpg",
+    "/HomeHeroSection/hc4.jpg",
+  ];
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+  return (
+    <img
+      src={images[index]}
+      alt="Hero Background"
+      className="w-full h-full object-cover transition-opacity duration-1000 absolute inset-0"
+      style={{ zIndex: 0, transition: "opacity 1s" }}
+    />
   );
 }

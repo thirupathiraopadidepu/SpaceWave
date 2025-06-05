@@ -1,120 +1,118 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Menu, X, Building } from "lucide-react";
 
+import {
+  Home,
+  Info,
+  Briefcase,
+  Building2,
+  Users,
+  Mail,
+  Menu,
+  X,
+} from "lucide-react";
+
+// Nav links with icons
 const navLinks = [
-  { path: "/", label: "HOME" },
-  { path: "/about", label: "ABOUT" },
-  { path: "/services", label: "SERVICES" },
-  { path: "/properties", label: "PROPERTIES" },
-  { path: "/clients", label: "CLIENTS" },
-  { path: "/contact", label: "CONTACT" },
+  { path: "/", label: "HOME", icon: <Home className="w-5 h-5" /> },
+  { path: "/about", label: "ABOUT", icon: <Info className="w-5 h-5" /> },
+  {
+    path: "/services",
+    label: "SERVICES",
+    icon: <Briefcase className="w-5 h-5" />,
+  },
+  {
+    path: "/properties",
+    label: "PROPERTIES",
+    icon: <Building2 className="w-5 h-5" />,
+  },
+  { path: "/clients", label: "CLIENTS", icon: <Users className="w-5 h-5" /> },
+  { path: "/contact", label: "CONTACT", icon: <Mail className="w-5 h-5" /> },
 ];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
-      }`}
-    >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <NavLink to="/" className="flex items-center">
-          <img
-            src="/SW_Logo-main.png"
-            alt="SpaceWave Logo"
-            className="h-18 md:h-20 object-contain transition-all duration-300"
-          />
-        </NavLink>
-
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden"
-        >
-          {isMenuOpen ? (
-            <X
-              className={`w-6 h-6 ${
-                isScrolled ? "text-neutral-900" : "text-neutral-900"
-              }`}
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-200">
+        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+          {/* Logo */}
+          <NavLink to="/" className="flex items-center space-x-2">
+            <img
+              src="/SW_Logo-main.png"
+              alt="SpaceWave Logo"
+              className="h-10 md:h-12 object-contain"
             />
-          ) : (
-            <Menu
-              className={`w-6 h-6 ${
-                isScrolled ? "text-neutral-900" : "text-neutral-900"
-              }`}
-            />
-          )}
-        </button>
-
-        {/* Desktop menu */}
-        <nav className="hidden md:flex items-center space-x-1">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) =>
-                `rainbow-button ${
-                  isActive ? "text-primary-600" : "text-neutral-900"
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-          {/* <NavLink
-            to="/contact"
-            className="ml-4 btn btn-primary rainbow-button "
-          >
-            Get in Touch
-          </NavLink> */}
-        </nav>
-      </div>
-
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <nav className="md:hidden bg-white shadow-lg py-4 px-6 absolute top-full left-0 right-0 flex flex-col space-y-3">
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              onClick={() => setIsMenuOpen(false)}
-              className={({ isActive }) =>
-                isActive
-                  ? "font-medium text-primary-600"
-                  : "text-neutral-800 hover:text-primary-600"
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-          <NavLink
-            to="/contact"
-            onClick={() => setIsMenuOpen(false)}
-            className="btn btn-primary text-center mt-2"
-          >
-            Get in Touch
           </NavLink>
-        </nav>
-      )}
-    </header>
+
+          {/* Contact Info (right side, above nav icons) */}
+          <div className="hidden md:flex flex-col items-end space-y-1">
+            <div className="flex items-center gap-3 text-sm text-neutral-700 font-medium">
+              <span>+91 94411 85884</span>
+              <span className="mx-2 text-gray-300">|</span>
+              <span>info@spacewave.in</span>
+            </div>
+          </div>
+
+          {/* Mobile menu toggle */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden"
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-neutral-900" />
+            ) : (
+              <Menu className="w-6 h-6 text-neutral-900" />
+            )}
+          </button>
+
+          {/* Desktop navigation */}
+          <nav className="hidden md:flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                className={({ isActive }) =>
+                  `flex flex-col items-center text-xs font-medium ${
+                    isActive
+                      ? "text-primary-600"
+                      : "text-neutral-800 hover:text-primary-600"
+                  }`
+                }
+              >
+                {link.icon}
+                <span>{link.label}</span>
+              </NavLink>
+            ))}
+          </nav>
+        </div>
+
+        {/* Mobile menu dropdown */}
+        {isMenuOpen && (
+          <nav className="md:hidden bg-white border-t border-gray-200 shadow-md py-4 px-6 flex flex-col space-y-4 absolute top-full left-0 right-0">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) =>
+                  `flex items-center space-x-2 text-base font-medium ${
+                    isActive
+                      ? "text-primary-600"
+                      : "text-neutral-800 hover:text-primary-600"
+                  }`
+                }
+              >
+                {link.icon}
+                <span>{link.label}</span>
+              </NavLink>
+            ))}
+          </nav>
+        )}
+      </header>
+      {/* Spacer to prevent content being hidden behind fixed navbar */}
+      <div className="h-16 md:h-20" />
+    </>
   );
 }

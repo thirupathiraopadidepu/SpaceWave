@@ -23,7 +23,7 @@ export default function Services() {
         <img
           src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Modern office interior"
-          className="animated-bg-image h-48 md:h-64 object-cover"
+          className="animated-bg-image h-58 md:h-74 object-cover"
         />
         <div className="container relative z-20">
           <div className="max-w-2xl mx-auto text-center text-white">

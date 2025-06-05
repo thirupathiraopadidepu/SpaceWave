@@ -39,7 +39,7 @@ const Clients = () => {
     >
       {/* Hero Section */}
       <section
-        className="relative w-full min-h-[320px] md:min-h-[400px] flex items-center justify-center bg-cover bg-center"
+        className="relative w-full min-h-[320px] md:min-h-[400px] flex items-center justify-center bg-cover bg-center animated-bg-image"
         style={{
           backgroundImage: "url('/clientlogos/chsbg.jpeg')",
           backgroundSize: "cover",

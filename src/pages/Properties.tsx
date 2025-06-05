@@ -63,7 +63,7 @@ export default function Properties() {
   }
 
   return (
-    <div className="page-transition pt-24">
+    <div className="page-transition">
       <Helmet>
         <title>Properties for Sale & Lease | SpaceWave</title>
         <meta
@@ -83,7 +83,7 @@ export default function Properties() {
         <link rel="canonical" href="https://spacewave.in/properties" />
       </Helmet>
       <section
-        className="relative min-h-[340px] flex items-center justify-center bg-cover bg-center"
+        className="relative min-h-[340px] flex items-center justify-center bg-cover bg-center animated-bg-image object-cover"
         style={{ backgroundImage: "url('/wedeal/fpropbg.png')" }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 z-0" />

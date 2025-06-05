@@ -16,11 +16,11 @@ export default function Home() {
   return (
     <div className="page-transition">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden animated-bg-image">
         {/* Carousel Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           <div className="w-full h-full">
-            <div className="absolute inset-0 w-full h-full">
+            <div className="absolute inset-0 w-full h-full animated-bg-image">
               <CarouselBgImages />
             </div>
           </div>
@@ -401,12 +401,16 @@ function RotatingCards() {
 // Add this at the bottom of the file (before export default):
 function CarouselBgImages() {
   const images = [
-    "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    // "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "/HomeHeroSection/hc.jpg",
     "/HomeHeroSection/hc1.jpg",
-    "/HomeHeroSection/hc2.jpg",
+    // "/HomeHeroSection/hc2.jpg",
     "/HomeHeroSection/hc3.jpg",
     "/HomeHeroSection/hc4.jpg",
+    "/HomeHeroSection/hc5.jpg",
+    "/HomeHeroSection/hc6.avif",
+    "/HomeHeroSection/hc7.avif",
+    "/HomeHeroSection/hc8.jpeg",
   ];
   const [index, setIndex] = useState(0);
   useEffect(() => {

@@ -134,6 +134,36 @@ export default function Properties() {
                   activeCategory,
                   projectName?.trim()
                 );
+                // Special rendering for Sale Options
+                if (activeCategory === "Sale Options") {
+                  return (
+                    <div
+                      key={optionKey}
+                      className="bg-white rounded-xl shadow-lg p-6 flex flex-col"
+                    >
+                      <div className="h-44 w-full bg-gradient-to-tr from-primary-100 to-primary-300 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <img
+                          src={imgSrc}
+                          alt={projectName || "Property"}
+                          className="object-cover w-full h-full rounded-lg"
+                          onError={(e) => {
+                            e.currentTarget.src = "/services/fproperties.jpg";
+                          }}
+                        />
+                      </div>
+                      <h3 className="font-bold text-xl mb-2 text-primary-700">
+                        {projectName || optionKey}
+                      </h3>
+                      <div className="text-sm text-neutral-700 mb-2">
+                        {Object.entries(prop).map(([k, v]) => (
+                          <div key={k} className="mb-1">
+                            <span className="font-semibold">{k}:</span> {v}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                }
                 return (
                   <div
                     key={optionKey}
@@ -172,12 +202,6 @@ export default function Properties() {
                       <span className="font-semibold">Status:</span>{" "}
                       {prop["Status"]}
                     </div>
-                    {/* <div className="text-sm text-neutral-700 mb-2">
-                      <span className="font-semibold">Rent/sft:</span>{" "}
-                      {prop["Rent per sft.  WARM SHELL"]
-                        ? `₹${prop["Rent per sft.  WARM SHELL"]}`
-                        : "-"}
-                    </div> */}
                     <div className="text-sm text-neutral-700 mb-2">
                       <span className="font-semibold">Parking:</span>{" "}
                       {prop["Car Parking ratio"]}

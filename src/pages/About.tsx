@@ -284,7 +284,7 @@ export default function About() {
             subtitle="Guiding SpaceWave to New Heights"
             centered
           />
-          <div className="grid md:grid-cols-2 gap-12 mt-12 items-center">
+          <div className="flex flex-col items-center justify-center mt-12">
             <div className="flex flex-col items-center text-center">
               <img
                 src="/wedeal/villa1.jpg"
@@ -302,7 +302,8 @@ export default function About() {
                 SpaceWave with a vision for innovation and excellence.
               </p>
             </div>
-            <div className="flex flex-col items-center text-center">
+          </div>
+          {/* <div className="flex flex-col items-center text-center">
               <img
                 src="/wedeal/retail.jpg"
                 alt="Co-Founder"
@@ -319,8 +320,8 @@ export default function About() {
                 business development, ensuring every client receives
                 personalized attention.
               </p>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </div>
       </section>
 

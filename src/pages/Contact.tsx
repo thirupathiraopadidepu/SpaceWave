@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   MapPin,
   Phone,
@@ -23,6 +23,8 @@ export default function Contact() {
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -114,15 +116,70 @@ export default function Contact() {
           {/* Row 1: Image and Contact Form side by side */}
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Contact Us Illustration (Image, same size as form) */}
-            <div className="w-full flex justify-center">
+            <div className="w-full flex justify-center relative">
               <video
+                ref={videoRef}
                 src="/contact/contactv.mp4"
                 autoPlay
                 loop
-                muted
+                muted={isMuted}
                 className="rounded-2xl shadow-lg object-cover w-full h-full max-w-none"
                 style={{ maxHeight: 600, minHeight: 480 }}
               />
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMuted((prev) => {
+                    const newMuted = !prev;
+                    if (videoRef.current) videoRef.current.muted = newMuted;
+                    return newMuted;
+                  });
+                }}
+                className="absolute top-4 right-4 bg-white/80 rounded-full p-2 shadow focus:outline-none"
+                title={isMuted ? "Unmute" : "Mute"}
+              >
+                {isMuted ? (
+                  // Muted icon
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-gray-700"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 9v6h4l5 5V4l-5 5H9zm-4 4v-2a4 4 0 014-4h1"
+                    />
+                    <line
+                      x1="1"
+                      y1="1"
+                      x2="23"
+                      y2="23"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    />
+                  </svg>
+                ) : (
+                  // Unmuted icon
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6 text-gray-700"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 9v6h4l5 5V4l-5 5H9zm-4 4v-2a4 4 0 014-4h1"
+                    />
+                  </svg>
+                )}
+              </button>
             </div>
             {/* Contact Form */}
             <form

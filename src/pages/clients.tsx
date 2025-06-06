@@ -29,6 +29,8 @@ const clientLogos = [
   "/clientlogos/Vasavi-Group-Logo.jpeg",
   "/clientlogos/vatika-group-logo.jpeg",
   "/clientlogos/Webfurther.jpeg",
+  "/clientlogos/way2sms.png",
+  "/clientlogos/WesternConstructions.jpg",
 ];
 
 const Clients = () => {
@@ -85,7 +87,7 @@ const Clients = () => {
         </div>
 
         {/* Logos Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-12  p-6 ">
+        {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-12  p-6 ">
           {clientLogos.map((logo, index) => (
             <div
               key={index}
@@ -98,7 +100,7 @@ const Clients = () => {
               />
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Featured Clients Section */}
         <section className="w-full max-w-6xl mx-auto mt-20 mb-10">

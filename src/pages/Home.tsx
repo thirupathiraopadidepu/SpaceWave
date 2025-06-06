@@ -16,11 +16,11 @@ export default function Home() {
   return (
     <div className="page-transition">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden animated-bg-image">
+      <section className="relative min-h-screen flex items-center overflow-hidden object-cover">
         {/* Carousel Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           <div className="w-full h-full">
-            <div className="absolute inset-0 w-full h-full animated-bg-image">
+            <div className="absolute inset-0 w-full h-full  object-cover">
               <CarouselBgImages />
             </div>
           </div>
@@ -404,13 +404,15 @@ function CarouselBgImages() {
     // "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "/HomeHeroSection/hc.jpg",
     "/HomeHeroSection/hc1.jpg",
-    // "/HomeHeroSection/hc2.jpg",
+    "/HomeHeroSection/hc2.jpg",
     "/HomeHeroSection/hc3.jpg",
     "/HomeHeroSection/hc4.jpg",
-    "/HomeHeroSection/hc5.jpg",
+    "/HomeHeroSection/hc5.avif",
     "/HomeHeroSection/hc6.avif",
     "/HomeHeroSection/hc7.avif",
-    "/HomeHeroSection/hc8.jpeg",
+    "/HomeHeroSection/hc8.jpg",
+    "/HomeHeroSection/hc9.jpg",
+    "/HomeHeroSection/hc10.jpg",
   ];
   const [index, setIndex] = useState(0);
   useEffect(() => {

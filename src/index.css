@@ -132,7 +132,7 @@
 
 .animate-marquee {
   display: flex;
-  animation: marquee 30s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 @keyframes slide-x-slow {
   0% {
@@ -143,7 +143,7 @@
   }
 }
 .animate-slide-x-slow {
-  animation: slide-x-slow 30s linear infinite;
+  animation: slide-x-slow 8s linear infinite;
 }
 @keyframes rainbowBorder {
   0% {

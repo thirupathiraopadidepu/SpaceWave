@@ -10,6 +10,7 @@ import {
   Mail,
   Menu,
   X,
+  PhoneIcon,
 } from "lucide-react";
 
 // Nav links with icons
@@ -49,9 +50,15 @@ export default function Navbar() {
           {/* Contact Info (right side, above nav icons) */}
           <div className="hidden md:flex flex-col items-end space-y-1">
             <div className="flex items-center gap-3 text-sm text-neutral-700 font-medium">
-              <span>+91 94411 85884</span>
+              <span className="flex items-center gap-1">
+                <Mail className="w-4 h-4 text-primary-600" />
+                info@spacewave.in
+              </span>
               <span className="mx-2 text-gray-300">|</span>
-              <span>info@spacewave.in</span>
+              <span className="flex items-center gap-1">
+                <PhoneIcon className="w-4 h-4 text-primary-600" />
+                +91 94411 85884
+              </span>
             </div>
           </div>
 

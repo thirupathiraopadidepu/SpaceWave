@@ -41,11 +41,12 @@ const Clients = () => {
     >
       {/* Hero Section */}
       <section
-        className="relative w-full min-h-[320px] md:min-h-[400px] flex items-center justify-center bg-cover bg-center animated-bg-image"
+        className="relative w-full min-h-[320px] md:min-h-[400px] flex items-center justify-center bg-cover bg-center "
         style={{
           backgroundImage: "url('/clientlogos/chsbg.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          marginTop: "-64px",
         }}
       >
         <div className="absolute inset-0  z-0" />

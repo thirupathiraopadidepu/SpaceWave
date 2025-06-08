@@ -8,6 +8,7 @@ import Services from "./pages/Services";
 import Properties from "./pages/Properties";
 import Clients from "./pages/clients";
 import Contact from "./pages/Contact";
+import ContactFab from "./components/ui/ContactFab";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <ContactFab />
     </BrowserRouter>
   );
 }

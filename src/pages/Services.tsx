@@ -17,24 +17,26 @@ const serviceImages: Record<string, string> = {
 
 export default function Services() {
   return (
-    <div className="page-transition pt-24">
+    <div className="page-transition ">
       {/* Hero Section */}
-      <section className="py-10 animated-bg">
+      <section
+        className="relative w-full h-96 md:h-[25rem] flex items-center justify-center p-0 m-0 overflow-hidden"
+        style={{ marginTop: "-64px" }}
+      >
         <img
           src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Modern office interior"
-          className="animated-bg-image h-58 md:h-74 object-cover"
+          className="  object-cover  border-0"
+          style={{ marginTop: "-64px" }}
         />
-        <div className="container relative z-20">
+        <div className="container absolute inset-0 flex flex-col justify-center items-center z-20">
           <div className="max-w-2xl mx-auto text-center text-white">
             <motion.h1
               className="text-2xl md:text-3xl font-bold text-black"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-            >
-              Our Services
-            </motion.h1>
+            ></motion.h1>
             <motion.p
               className="text-sm md:text-lg mt-2 max-w-xl"
               initial={{ opacity: 0 }}

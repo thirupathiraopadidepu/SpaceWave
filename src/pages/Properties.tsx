@@ -83,8 +83,11 @@ export default function Properties() {
         <link rel="canonical" href="https://spacewave.in/properties" />
       </Helmet>
       <section
-        className="relative min-h-[340px] flex items-center justify-center bg-cover bg-center animated-bg-image object-cover"
-        style={{ backgroundImage: "url('/wedeal/fpropbg.png')" }}
+        className="relative min-h-[340px] flex items-center justify-center bg-cover bg-center object-cover"
+        style={{
+          backgroundImage: " url('/wedeal/fpropbg.png')",
+          marginTop: "-64px",
+        }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 z-0" />
         <div className="container relative z-10 flex flex-col items-center text-center py-16">

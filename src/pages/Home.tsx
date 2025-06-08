@@ -14,9 +14,13 @@ export default function Home() {
   const featuredProperties = properties.slice(0, 3);
 
   return (
-    <div className="page-transition">
+    <div className="page-transition pt-0 ">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden object-cover">
+      <section
+        className="relative min-h-screen flex items-center overflow-hidden object-cover margin-top-[-64px]"
+        style={{ marginTop: "-64px" }}
+      >
+        {/* Overlay */}
         {/* Carousel Background */}
         <div className="absolute inset-0 w-full h-full z-0">
           <div className="w-full h-full">

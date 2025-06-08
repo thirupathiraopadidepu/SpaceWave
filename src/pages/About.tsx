@@ -3,13 +3,16 @@ import { Building, Users, CheckCircle, TrendingUp } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="page-transition pt-24">
+    <div className="page-transition">
       {/* Hero Section */}
-      <section className="py-10">
+      <section
+        className="relative w-full h-64 md:h-96 flex items-center justify-center p-0 m-0 overflow-hidden "
+        style={{ marginTop: "-64px" }}
+      >
         <img
           src="https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Modern office building"
-          className="animated-bg-image h-48 md:h-64 object-cover"
+          className="w-full h-full object-cover border-0"
         />
       </section>
 

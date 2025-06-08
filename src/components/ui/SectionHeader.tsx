@@ -13,7 +13,7 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <div className={`mb-12 ${centered ? "text-center" : ""}`}>
-      <h2 className="section-title">{title}</h2>
+      <h3 className="section-title">{title}</h3>
       {subtitle && (
         <p className={`section-subtitle ${centered ? "mx-auto" : ""}`}>
           {subtitle}

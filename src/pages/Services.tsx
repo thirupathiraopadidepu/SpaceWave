@@ -88,7 +88,7 @@ export default function Services() {
                   alt={services[1].title}
                   className="h-40 rounded-xl shadow-md mx-4"
                 />
-                <div className="text-xl font-bold text-white mx-4">
+                <div className="bg-[#1D267D] text-white text-sm px-4 py-2 rounded-lg shadow-sm mx-4 whitespace-nowrap">
                   {services[1].title}
                 </div>
               </Marquee>
@@ -109,7 +109,7 @@ export default function Services() {
                   alt={services[2].title}
                   className="h-40 rounded-xl shadow-md mx-4"
                 />
-                <div className="text-xl font-bold text-white mx-4">
+                <div className="bg-[#1D267D] text-white text-sm px-4 py-2 rounded-lg shadow-sm mx-4 whitespace-nowrap">
                   {services[2].title}
                 </div>
               </Marquee>

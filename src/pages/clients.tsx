@@ -74,34 +74,18 @@ const Clients = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-20">
         {/* Marquee logo strip */}
-        <div className="overflow-hidden mt-10 w-full py-4">
+        <div className="overflow-hidden mt-10 w-full py-6 ">
           <div className="flex animate-marquee space-x-8 whitespace-nowrap">
-            {clientLogos.map((logo, index) => (
+            {[...clientLogos, ...clientLogos].map((logo, index) => (
               <img
                 key={index}
                 src={logo}
                 alt={`Client Logo ${index + 1}`}
-                className="h-12 md:h-14 object-contain  transition duration-300"
+                className="h-20 md:h-24 object-contain  transition duration-300"
               />
             ))}
           </div>
         </div>
-
-        {/* Logos Grid */}
-        {/* <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-12  p-6 ">
-          {clientLogos.map((logo, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center p-3 bg-white/20 rounded-lg"
-            >
-              <img
-                src={logo}
-                alt={`Client Logo ${index + 1}`}
-                className="h-12 md:h-16 object-contain transition duration-300"
-              />
-            </div>
-          ))}
-        </div> */}
 
         {/* Featured Clients Section */}
         <section className="w-full max-w-6xl mx-auto mt-20 mb-10">

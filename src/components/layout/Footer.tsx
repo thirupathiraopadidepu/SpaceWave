@@ -19,9 +19,9 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer
-      className=" text-white pt-16 pb-8 relative"
+      className=" text-black pt-16 pb-8 relative"
       style={{
-        backgroundImage: "url('/footer.jpg')",
+        // backgroundImage: "url('/footer.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -37,9 +37,7 @@ export default function Footer() {
                 className="h-14 md:h-16 object-contain transition-all duration-300"
               />
             </div>
-            <p className="text-neutral-400 mb-6">
-              Commercial. Residential. Customized to You.
-            </p>
+            <p className=" mb-6">Commercial. Residential. Customized to You.</p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
@@ -48,7 +46,7 @@ export default function Footer() {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="text-neutral-400 hover:text-white transition-colors duration-300"
+                    className=" transition-colors duration-300"
                   >
                     <Icon size={20} />
                   </a>
@@ -66,7 +64,7 @@ export default function Footer() {
                 <li key={link.path}>
                   <NavLink
                     to={link.path}
-                    className="text-neutral-400 hover:text-white transition-colors duration-300"
+                    className=" hover:text-blue transition-colors duration-300"
                   >
                     {link.label}
                   </NavLink>
@@ -83,7 +81,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/services"
-                  className="text-neutral-400 hover:text-white transition-colors duration-300"
+                  className=" hover:text-blue transition-colors duration-300"
                 >
                   Interior Design
                 </a>
@@ -91,7 +89,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/services"
-                  className="text-neutral-400 hover:text-white transition-colors duration-300"
+                  className=" hover:text-blue transition-colors duration-300"
                 >
                   Commercial Sales & Leasing
                 </a>
@@ -99,7 +97,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/services"
-                  className="text-neutral-400 hover:text-white transition-colors duration-300"
+                  className="hover:text-blue transition-colors duration-300"
                 >
                   Residential Sales
                 </a>
@@ -107,7 +105,7 @@ export default function Footer() {
               <li>
                 <a
                   href="/services"
-                  className="text-neutral-400 hover:text-white transition-colors duration-300"
+                  className=" hover:text-blue transition-colors duration-300"
                 >
                   Property Management
                 </a>
@@ -119,7 +117,7 @@ export default function Footer() {
             <h3 className="font-serif text-xl font-semibold mb-4 text-white">
               Contact Us
             </h3>
-            <address className="not-italic text-neutral-400">
+            <address className="not-italic ">
               <p className="mb-2">
                 Jain Sadguru Image’s Capital Park, Office No. 503, 5th Floor,
                 Madhapur, Hyderabad - 500081
@@ -130,9 +128,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <hr className="border-neutral-800 mb-8" />
+        <hr className=" mb-8" />
 
-        <div className="text-center text-neutral-500">
+        <div className="text-center ">
           <p>© {new Date().getFullYear()} SpaceWave. All rights reserved.</p>
         </div>
       </div>

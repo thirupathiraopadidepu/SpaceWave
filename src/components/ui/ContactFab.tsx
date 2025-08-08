@@ -55,7 +55,7 @@ const ContactFab: React.FC = () => {
             <X className="w-6 h-6 text-black" />
           ) : (
             <img
-              src="public\contact\support-icon.png.bmp"
+              src="/contact/support-icon.png.bmp"
               alt="Contact"
               className="w-12 h-12 rounded-full object-cover"
             />

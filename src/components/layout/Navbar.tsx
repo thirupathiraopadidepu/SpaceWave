@@ -12,6 +12,7 @@ import {
   X,
   PhoneIcon,
 } from "lucide-react";
+import EnquiryForm from "../ui/EnquiryForm";
 
 // Nav links with icons
 const navLinks = [
@@ -30,9 +31,9 @@ const navLinks = [
   { path: "/clients", label: "CLIENTS", icon: <Users className="w-5 h-5" /> },
   { path: "/contact", label: "CONTACT", icon: <Mail className="w-5 h-5" /> },
 ];
-
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showEnquiryForm, setShowEnquiryForm] = useState(false);
 
   return (
     <>
@@ -47,18 +48,32 @@ export default function Navbar() {
             />
           </NavLink>
 
-          {/* Contact Info (right side, above nav icons) */}
+          {/* Contact Info (right side, above nav icons) - prominent buttons style */}
           <div className="hidden md:flex flex-col items-end space-y-1">
-            <div className="flex items-center gap-3 text-sm text-neutral-700 font-medium">
-              <span className="flex items-center gap-1">
-                <Mail className="w-4 h-4 text-primary-600" />
-                info@spacewave.in
-              </span>
-              <span className="mx-2 text-gray-300">|</span>
-              <span className="flex items-center gap-1">
-                <PhoneIcon className="w-4 h-4 text-primary-600" />
+            <div className="flex items-center gap-2">
+              <a
+                href="tel:+919441185884"
+                className="bg-primary-700 hover:bg-primary-800 text-white font-semibold rounded-lg px-4 py-2 transition flex items-center gap-2 shadow-md min-w-[100px] justify-center"
+                style={{ fontSize: "1rem", letterSpacing: "0.5px" }}
+              >
+                <PhoneIcon className="w-5 h-5" />
                 +91 94411 85884
-              </span>
+              </a>
+              <button
+                type="button"
+                onClick={() => setShowEnquiryForm(true)}
+                className="bg-primary-700 hover:bg-primary-800 text-white font-semibold rounded-lg px-4 py-2 transition flex items-center gap-2 shadow-md min-w-[100px] justify-center"
+                style={{ fontSize: "1rem", letterSpacing: "0.5px" }}
+                title="info@spacewave.in"
+              >
+                Enquiry Form
+              </button>
+              {showEnquiryForm && (
+                <EnquiryForm
+                  forceVisible
+                  onClose={() => setShowEnquiryForm(false)}
+                />
+              )}
             </div>
           </div>
 

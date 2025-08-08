@@ -81,6 +81,50 @@ export default function Properties() {
         <meta property="og:image" content="/wedeal/fpropbg.png" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://spacewave.in/properties" />
+        {/* SEO: Add all property names as keywords */}
+        <meta
+          name="keywords"
+          content={Object.values(fullPropertyData)
+            .flatMap((cat: any) =>
+              Object.values(cat).map(
+                (prop: any) =>
+                  prop["PROJECT"] ||
+                  prop["Project"] ||
+                  prop["Project / Building Name"] ||
+                  ""
+              )
+            )
+            .filter(Boolean)
+            .join(", ")}
+        />
+        {/* SEO: Structured data for all properties */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "SpaceWave Properties",
+            itemListElement: Object.entries(fullPropertyData).flatMap(
+              ([cat, options]: any) =>
+                Object.values(options).map((prop: any, idx: number) => ({
+                  "@type": "ListItem",
+                  position: idx + 1,
+                  name:
+                    prop["PROJECT"] ||
+                    prop["Project"] ||
+                    prop["Project / Building Name"] ||
+                    "",
+                  description:
+                    prop["Location"] || prop["Project Details"] || "",
+                  url: `https://spacewave.in/properties#${encodeURIComponent(
+                    prop["PROJECT"] ||
+                      prop["Project"] ||
+                      prop["Project / Building Name"] ||
+                      "property"
+                  )}`,
+                }))
+            ),
+          })}
+        </script>
       </Helmet>
       <section
         className="relative min-h-[340px] flex items-center justify-center bg-cover bg-center object-cover"

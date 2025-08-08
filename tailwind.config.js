@@ -49,6 +49,15 @@ export default {
         "hero-pattern":
           "url('https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
       },
+      animation: {
+        marquee: "marquee 30s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" }, // shift half to loop
+        },
+      },
     },
   },
   plugins: [],

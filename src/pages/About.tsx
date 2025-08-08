@@ -1,5 +1,6 @@
 import SectionHeader from "../components/ui/SectionHeader";
 import { Building, Users, CheckCircle, TrendingUp } from "lucide-react";
+import CountUp from "react-countup";
 
 export default function About() {
   return (
@@ -196,33 +197,48 @@ export default function About() {
       <section className="py-20 bg-gradient-to-br from-sky-500 to-blue-500 text-white">
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {/* Transactions */}
             <div>
               <Building size={48} className="mx-auto mb-4 text-primary-200" />
-              <p className="text-4xl font-serif font-bold mb-2">200+</p>
+              <p className="text-4xl font-serif font-bold mb-2">
+                <CountUp end={200} duration={5} enableScrollSpy />+
+              </p>
               <p className="text-primary-100">Successful Transactions</p>
             </div>
+
+            {/* Experts */}
             <div>
               <Users size={48} className="mx-auto mb-4 text-primary-200" />
-              <p className="text-4xl font-serif font-bold mb-2">15+</p>
+              <p className="text-4xl font-serif font-bold mb-2">
+                <CountUp end={15} duration={5} enableScrollSpy />+
+              </p>
               <p className="text-primary-100">Industry Experts</p>
             </div>
+
+            {/* Square Feet */}
             <div>
               <TrendingUp size={48} className="mx-auto mb-4 text-primary-200" />
-              <p className="text-4xl font-serif font-bold mb-2">20M+</p>
+              <p className="text-4xl font-serif font-bold mb-2">
+                <CountUp end={20} duration={5} enableScrollSpy />
+                M+
+              </p>
               <p className="text-primary-100">Square Feet Transformed</p>
             </div>
+
+            {/* Years */}
             <div>
               <CheckCircle
                 size={48}
                 className="mx-auto mb-4 text-primary-200"
               />
-              <p className="text-4xl font-serif font-bold mb-2">14</p>
+              <p className="text-4xl font-serif font-bold mb-2">
+                <CountUp end={14} duration={5} enableScrollSpy />
+              </p>
               <p className="text-primary-100">Years of Excellence</p>
             </div>
           </div>
         </div>
       </section>
-
       {/* Our Values Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         <div className="container">
@@ -276,55 +292,6 @@ export default function About() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Leadership Section */}
-      <section className="py-20 bg-gradient-to-br from-primary-100 via-white to-primary-50 relative overflow-hidden">
-        <div className="container">
-          <SectionHeader
-            title="Meet Our Leadership"
-            subtitle="Guiding SpaceWave to New Heights"
-            centered
-          />
-          <div className="flex flex-col items-center justify-center mt-12">
-            <div className="flex flex-col items-center text-center">
-              <img
-                src="/wedeal/villa1.jpg"
-                alt="Founder"
-                className="h-32 w-32 rounded-full object-cover shadow-lg mb-4 border-4 border-primary-200"
-              />
-              <h3 className="font-serif text-xl font-bold text-primary-700 mb-1">
-                Vasu
-              </h3>
-              <p className="text-primary-600 font-semibold mb-2">
-                Founder & CEO
-              </p>
-              <p className="text-neutral-600">
-                With over 20 years of experience in real estate, Vasu leads
-                SpaceWave with a vision for innovation and excellence.
-              </p>
-            </div>
-          </div>
-          {/* <div className="flex flex-col items-center text-center">
-              <img
-                src="/wedeal/retail.jpg"
-                alt="Co-Founder"
-                className="h-32 w-32 rounded-full object-cover shadow-lg mb-4 border-4 border-primary-200"
-              />
-              <h3 className="font-serif text-xl font-bold text-primary-700 mb-1">
-                S. Rao
-              </h3>
-              <p className="text-primary-600 font-semibold mb-2">
-                Co-Founder & Director
-              </p>
-              <p className="text-neutral-600">
-                Rao brings a wealth of expertise in client relations and
-                business development, ensuring every client receives
-                personalized attention.
-              </p>
-            </div> */}
-          {/* </div> */}
         </div>
       </section>
 

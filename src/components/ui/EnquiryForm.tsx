@@ -20,7 +20,15 @@ function useCountdown(hours: number) {
   return [hoursLeft, minutesLeft, secondsLeft] as const;
 }
 
-export default function EnquiryForm() {
+interface EnquiryFormProps {
+  forceVisible?: boolean;
+  onClose?: () => void;
+}
+
+export default function EnquiryForm({
+  forceVisible,
+  onClose,
+}: EnquiryFormProps) {
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -29,12 +37,16 @@ export default function EnquiryForm() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(forceVisible ?? false);
 
   useEffect(() => {
+    if (forceVisible) {
+      setVisible(true);
+      return;
+    }
     const timer = setTimeout(() => setVisible(true), 5000); // Show after 5 seconds
     return () => clearTimeout(timer);
-  }, []);
+  }, [forceVisible]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -83,7 +95,10 @@ export default function EnquiryForm() {
       <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 animate-fade-in">
         <div className="relative max-w-md w-full mx-auto">
           <button
-            onClick={() => setVisible(false)}
+            onClick={() => {
+              setVisible(false);
+              if (onClose) onClose();
+            }}
             className="absolute top-2 right-2 z-10 bg-white rounded-full p-1.5 shadow hover:bg-gray-100 transition"
             aria-label="Close Enquiry Form"
           >
@@ -106,7 +121,10 @@ export default function EnquiryForm() {
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 animate-fade-in">
       <div className="relative max-w-md w-full mx-auto">
         <button
-          onClick={() => setVisible(false)}
+          onClick={() => {
+            setVisible(false);
+            if (onClose) onClose();
+          }}
           className="absolute top-2 right-2 z-10 bg-white rounded-full p-1.5 shadow hover:bg-gray-100 transition"
           aria-label="Close Enquiry Form"
         >

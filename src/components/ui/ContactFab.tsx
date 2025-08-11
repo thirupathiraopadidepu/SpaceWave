@@ -48,16 +48,16 @@ const ContactFab: React.FC = () => {
       <div className="relative group">
         <button
           onClick={() => setOpen(!open)}
-          className="bg-white rounded-full p-1 shadow-lg hover:scale-105 transition"
+          className="rounded-full p-0 shadow-lg hover:scale-105 transition"
           aria-label="Contact Support"
         >
           {open ? (
             <X className="w-6 h-6 text-black" />
           ) : (
             <img
-              src="/contact/support-icon.png.bmp"
+              src="/contact/chat.png"
               alt="Contact"
-              className="w-12 h-12 rounded-full object-cover"
+              className="w-24 h-24 rounded-full object-cover"
             />
           )}
         </button>

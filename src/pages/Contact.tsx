@@ -36,10 +36,10 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Replace these with your EmailJS credentials
-    const SERVICE_ID = "your_service_id";
-    const OWNER_TEMPLATE_ID = "your_owner_template_id";
-    const CUSTOMER_TEMPLATE_ID = "your_customer_template_id";
-    const USER_ID = "your_public_key";
+    const SERVICE_ID = "service_6umm6ld";
+    const OWNER_TEMPLATE_ID = "template_4ztxmvl";
+    const CUSTOMER_TEMPLATE_ID = "template_7mi313s";
+    const USER_ID = "D5J6MnGCjMrbrzLKR";
     // Send email to website owner
     emailjs
       .send(

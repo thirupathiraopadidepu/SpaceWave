@@ -32,9 +32,9 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img
-                src="/SW_Logo-main.png"
+                src="/spacewavecapital.jpg"
                 alt="SpaceWave Logo"
-                className="h-14 md:h-16 object-contain transition-all duration-300"
+                className="h-12 md:h-14 object-contain transition-all duration-300"
               />
             </div>
             <p className=" mb-6">Commercial. Residential. Customized to You.</p>

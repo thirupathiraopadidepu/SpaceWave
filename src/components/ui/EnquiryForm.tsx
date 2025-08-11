@@ -58,9 +58,9 @@ export default function EnquiryForm({
     e.preventDefault();
     setLoading(true);
     // Replace these with your EmailJS credentials
-    const SERVICE_ID = "your_service_id";
-    const TEMPLATE_ID = "your_template_id";
-    const USER_ID = "your_user_id";
+    const SERVICE_ID = "service_6umm6ld";
+    const TEMPLATE_ID = "template_4ztxmvl";
+    const USER_ID = "D5J6MnGCjMrbrzLKR";
     emailjs
       .send(
         SERVICE_ID,

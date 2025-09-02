@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Logo */}
           <NavLink to="/" className="flex items-center space-x-2">
             <img
-              src="/spacewavecapital.jpg"
+              src="/SpaceWave.png"
               alt="SpaceWave Logo"
               className="h-12 md:h-14 object-contain"
             />

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { LogoStrip } from "../components/LogoStrip";
 
 const clientLogos = [
   "/clientlogos/8.-BACKOFFICE-I-T-SERVICES-INDIA-PRIVATE-LIMITED-logo.png",
@@ -31,7 +32,15 @@ const clientLogos = [
   "/clientlogos/Webfurther.jpeg",
   "/clientlogos/way2sms.png",
   "/clientlogos/WesternConstructions.jpg",
+  "/clientlogos/delta-technologies.jpeg",
+  "/clientlogos/central-books-logo.png",
+  "/clientlogos/pravaltech-logo.png",
+  "/clientlogos/prestige-logo.png",
+  "/clientlogos/sanali-group-logo.jpeg",
 ];
+
+const firstRow = clientLogos.slice(0, 18);
+const secondRow = clientLogos.slice(18);
 
 const Clients = () => {
   return (
@@ -74,17 +83,12 @@ const Clients = () => {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-20">
         {/* Marquee logo strip */}
-        <div className="overflow-hidden mt-10 w-full py-6 ">
-          <div className="flex animate-marquee space-x-8 whitespace-nowrap">
-            {[...clientLogos, ...clientLogos].map((logo, index) => (
-              <img
-                key={index}
-                src={logo}
-                alt={`Client Logo ${index + 1}`}
-                className="h-20 md:h-24 object-contain  transition duration-300"
-              />
-            ))}
-          </div>
+        <div className="overflow-hidden mt-10 w-full space-y-8">
+          {/* Row 1 (18 logos) */}
+          <LogoStrip logos={firstRow} />
+
+          {/* Row 2 (17 logos, reverse direction) */}
+          <LogoStrip logos={secondRow} reverse />
         </div>
 
         {/* Featured Clients Section */}

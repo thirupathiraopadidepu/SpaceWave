@@ -6,6 +6,7 @@ const navLinks = [
   { path: "/about", label: "About" },
   { path: "/services", label: "Services" },
   { path: "/properties", label: "Properties" },
+  { path: "/clients", label: "Clients" },
   { path: "/contact", label: "Contact" },
 ];
 
@@ -34,10 +35,10 @@ export default function Footer() {
               <img
                 src="/SpaceWave.png"
                 alt="SpaceWave Logo"
-                className="h-12 md:h-14 object-contain transition-all duration-300"
+                className="h-12 md:h-14 object-contain transition-all duration-300 mt-10 ml-0 hover:scale-105"
               />
             </div>
-            <p className=" mb-6">Commercial. Residential. Customized to You.</p>
+            {/* <p className=" mb-6">Commercial. Residential. Customized to You.</p> */}
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
@@ -56,7 +57,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-xl font-semibold mb-4 text-white">
+            <h3 className="font-serif text-xl font-semibold mb-4">
               Navigation
             </h3>
             <ul className="space-y-2">
@@ -74,9 +75,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-xl font-semibold mb-4 text-white">
-              Services
-            </h3>
+            <h3 className="font-serif text-xl font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -114,7 +113,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-serif text-xl font-semibold mb-4 text-white">
+            <h3 className="font-serif text-xl font-semibold mb-4">
               Contact Us
             </h3>
             <address className="not-italic ">

@@ -92,8 +92,17 @@ export default function EnquiryForm({
 
   if (submitted) {
     return (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 animate-fade-in">
-        <div className="relative max-w-md w-full mx-auto">
+      <div
+        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 animate-fade-in"
+        onClick={() => {
+          setVisible(false);
+          if (onClose) onClose();
+        }}
+      >
+        <div
+          className="relative max-w-md w-full mx-auto"
+          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+        >
           <button
             onClick={() => {
               setVisible(false);
@@ -118,21 +127,32 @@ export default function EnquiryForm({
   }
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 animate-fade-in">
-      <div className="relative max-w-md w-full mx-auto">
+    <div
+      className="fixed inset-0 z-[9999] bg-black/40 animate-fade-in"
+      onClick={() => {
+        setVisible(false);
+        if (onClose) onClose();
+      }}
+    >
+      {/* Popup box at bottom-right */}
+      <div
+        className="absolute bottom-6 right-6 w-full max-w-md"
+        onClick={(e) => e.stopPropagation()} // prevent overlay close
+      >
         <button
           onClick={() => {
             setVisible(false);
             if (onClose) onClose();
           }}
-          className="absolute top-2 right-2 z-10 bg-white rounded-full p-1.5 shadow hover:bg-gray-100 transition"
+          className="absolute -top-3 -right-3 z-10 bg-white rounded-full p-1.5 shadow hover:bg-gray-100 transition"
           aria-label="Close Enquiry Form"
         >
           <span style={{ fontSize: 22, fontWeight: "bold" }}>&times;</span>
         </button>
+
         <form
           onSubmit={handleSubmit}
-          className="bg-white/90 rounded-xl shadow-lg p-8 flex flex-col gap-4 animate-fade-in"
+          className="bg-white/95 rounded-xl shadow-xl p-6 flex flex-col gap-4 animate-fade-in"
         >
           <div className="mb-2 text-center">
             <div className="text-lg font-semibold text-primary-700 mb-1">
@@ -148,9 +168,11 @@ export default function EnquiryForm({
               </span>
             </div>
           </div>
+
           <h3 className="text-2xl font-bold text-primary-700 mb-2">
             Enquiry Form
           </h3>
+
           <input
             type="text"
             name="name"

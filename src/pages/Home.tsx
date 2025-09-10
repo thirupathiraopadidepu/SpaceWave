@@ -9,6 +9,7 @@ import SectionHeader from "../components/ui/SectionHeader";
 import PropertyCard from "../components/ui/PropertyCard";
 import { properties } from "../data/properties";
 import { useEffect, useState } from "react";
+import EnquiryForm from "../components/ui/EnquiryForm";
 
 export default function Home() {
   const featuredProperties = properties.slice(0, 3);
@@ -290,6 +291,31 @@ export default function Home() {
             </Link>
             <Link to="/contact" className="btn  border-2 border-white ">
               Contact Us Today
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Enquiry Form Section */}
+      <section className="py-20 bg-white relative overflow-hidden">
+        <div className="absolute inset-0  pointer-events-none transition-all duration-700" />
+        <div className="container relative z-10">
+          <SectionHeader
+            title="Get In Touch"
+            subtitle={
+              <span style={{ color: "#222" }}>
+                We'd love to hear from you! Please fill out the form below and
+                our team will get back to you shortly.
+              </span>
+            }
+            centered
+          />
+
+          <EnquiryForm />
+
+          <div className="text-center mt-12">
+            <Link to="/contact" className="btn btn-primary">
+              Contact Us
             </Link>
           </div>
         </div>

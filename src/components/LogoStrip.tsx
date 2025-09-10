@@ -10,8 +10,8 @@ export const LogoStrip = ({
   return (
     <motion.div
       className="flex space-x-8"
-      animate={{ x: reverse ? ["-100%", "0%"] : ["0%", "-100%"] }}
-      transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+      animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
+      transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
     >
       {[...logos, ...logos].map((logo, index) => (
         <img

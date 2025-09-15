@@ -66,7 +66,7 @@ export default function Services() {
             centered
           />
 
-          {/* First row: left ServiceCard, right Marquee */}
+          {/* First row: left ServiceCard, right Marquee with service[1] + service[2] */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="col-span-1">
               <ServiceCard
@@ -83,19 +83,26 @@ export default function Services() {
                 gradient={false}
                 className="w-full"
               >
-                <img
-                  src={serviceImages[services[1].id]}
-                  alt={services[1].title}
-                  className="h-40 rounded-xl shadow-md mx-4"
-                />
-                <div className="bg-[#1D267D] text-white text-sm px-4 py-2 rounded-lg shadow-sm mx-4 whitespace-nowrap">
-                  {services[1].title}
-                </div>
+                {[services[1], services[2]].map((service) => (
+                  <div
+                    key={service.id}
+                    className="flex flex-col items-center mx-6"
+                  >
+                    <img
+                      src={serviceImages[service.id]}
+                      alt={service.title}
+                      className="h-40 rounded-xl shadow-md mb-2"
+                    />
+                    <div className="bg-[#1D267D] text-white text-sm px-4 py-2 rounded-lg shadow-sm whitespace-nowrap">
+                      {service.title}
+                    </div>
+                  </div>
+                ))}
               </Marquee>
             </div>
           </div>
 
-          {/* Second row: left Marquee, right ServiceCard */}
+          {/* Second row: left Marquee with service[3] + service[4], right ServiceCard */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
             <div className="col-span-1 md:col-span-1 lg:col-span-2 flex items-center">
               <Marquee
@@ -104,21 +111,28 @@ export default function Services() {
                 gradient={false}
                 className="w-full"
               >
-                <img
-                  src={serviceImages[services[2].id]}
-                  alt={services[2].title}
-                  className="h-40 rounded-xl shadow-md mx-4"
-                />
-                <div className="bg-[#1D267D] text-white text-sm px-4 py-2 rounded-lg shadow-sm mx-4 whitespace-nowrap">
-                  {services[2].title}
-                </div>
+                {[services[3], services[4]].map((service) => (
+                  <div
+                    key={service.id}
+                    className="flex flex-col items-center mx-6"
+                  >
+                    <img
+                      src={serviceImages[service.id]}
+                      alt={service.title}
+                      className="h-40 rounded-xl shadow-md mb-2"
+                    />
+                    <div className="bg-[#1D267D] text-white text-sm px-4 py-2 rounded-lg shadow-sm whitespace-nowrap">
+                      {service.title}
+                    </div>
+                  </div>
+                ))}
               </Marquee>
             </div>
             <div className="col-span-1">
               <ServiceCard
                 service={{
-                  ...services[3],
-                  imageUrl: serviceImages[services[3].id],
+                  ...services[5],
+                  imageUrl: serviceImages[services[5].id],
                 }}
               />
             </div>
@@ -126,7 +140,7 @@ export default function Services() {
 
           {/* Remaining services as cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            {services.slice(4).map((service) => (
+            {services.slice(6).map((service) => (
               <ServiceCard
                 key={service.id}
                 service={{ ...service, imageUrl: serviceImages[service.id] }}

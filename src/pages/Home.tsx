@@ -33,7 +33,7 @@ export default function Home() {
         <div className="container relative z-20">
           <div className="max-w-3xl">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-lg">
-              Gateway to Preminum Spaces
+              Gateway to Premium Spaces
             </h1>
             {/* <p className="text-xl md:text-2xl mb-8 font-light text-white">
               Your trusted partner in real estate solutions. Whether you're

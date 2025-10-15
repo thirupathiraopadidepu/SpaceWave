@@ -234,3 +234,16 @@
   z-index: -1;
   border-radius: 6px;
 }
+@keyframes slide-x-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide-x-slow {
+  animation: slide-x-slow 12s linear infinite;
+  display: flex;
+}

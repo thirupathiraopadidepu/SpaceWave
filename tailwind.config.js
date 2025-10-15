@@ -51,11 +51,17 @@ export default {
       },
       animation: {
         marquee: "marquee 30s linear infinite",
+        "slide-x-slow": "slide-x 25s linear infinite",
       },
+
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" }, // shift half to loop
+        },
+        "slide-x": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
       },
     },

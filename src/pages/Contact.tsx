@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
+import SEO from "../components/SEO";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -83,6 +84,12 @@ export default function Contact() {
   };
 
   return (
+    <>
+    <SEO
+  title="Contact SpaceWave | Commercial Real Estate Consultants Hyderabad"
+  description="Contact SpaceWave for commercial office spaces, leasing, property management and real estate consulting services in Hyderabad. Call or send us an enquiry today."
+  canonical="https://www.spacewave.in/contact"
+/>
     <div className="bg-white text-gray-900 font-sans">
       {/* Hero Section */}s{" "}
       <section
@@ -696,5 +703,6 @@ export default function Contact() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import SectionHeader from "../components/ui/SectionHeader";
 import { Helmet } from "react-helmet-async";
 import fullPropertyData from "../data/full_property_data.json";
+import SEO from "../components/SEO";
 
 // Type for property option
 interface PropertyOption {
@@ -63,6 +64,12 @@ export default function Properties() {
   }
 
   return (
+    <>
+    <SEO
+  title="Office Spaces for Rent, Lease & Sale in Hyderabad | SpaceWave"
+  description="Browse premium commercial office spaces, plug-and-play offices, warm shell offices, retail spaces and investment properties across Hyderabad with SpaceWave."
+  canonical="https://www.spacewave.in/properties"
+/>
     <div className="page-transition">
       <Helmet>
         <title>Properties for Sale & Lease | SpaceWave</title>
@@ -268,5 +275,6 @@ export default function Properties() {
         </div>
       </section>
     </div>
+    </>
   );
 }

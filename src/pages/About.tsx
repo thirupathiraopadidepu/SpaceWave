@@ -1,9 +1,16 @@
 import SectionHeader from "../components/ui/SectionHeader";
 import { Building, Users, CheckCircle, TrendingUp } from "lucide-react";
 import CountUp from "react-countup";
+import SEO from "../components/SEO";
 
 export default function About() {
   return (
+    <>
+    <SEO
+  title="About SpaceWave | Commercial Real Estate Consultants"
+  description="Learn about SpaceWave, Hyderabad's trusted commercial real estate consultants specializing in office leasing, commercial sales and workspace solutions."
+  canonical="https://www.spacewave.in/about"
+/>
     <div className="page-transition">
       {/* Hero Section */}
       <section
@@ -336,5 +343,6 @@ export default function About() {
         </div>
       </section>
     </div>
+    </>
   );
 }

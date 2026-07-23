@@ -4,6 +4,7 @@ import SectionHeader from "../components/ui/SectionHeader";
 import { motion } from "framer-motion";
 import { properties } from "../data/properties";
 import Marquee from "react-fast-marquee";
+import SEO from "../components/SEO";
 
 // Map service images by service id or title (ensure filenames match or adjust as needed)
 const serviceImages: Record<string, string> = {
@@ -17,6 +18,12 @@ const serviceImages: Record<string, string> = {
 
 export default function Services() {
   return (
+    <>
+    <SEO
+  title="Commercial Real Estate Services in Hyderabad | SpaceWave"
+  description="Explore SpaceWave's commercial real estate services including office leasing, commercial sales, residential sales, property management and interior design solutions in Hyderabad."
+  canonical="https://www.spacewave.in/services"
+/>
     <div className="page-transition ">
       {/* Hero Section */}
       <section
@@ -324,5 +331,6 @@ export default function Services() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -10,11 +10,19 @@ import PropertyCard from "../components/ui/PropertyCard";
 import { properties } from "../data/properties";
 import { useEffect, useState } from "react";
 import EnquiryForm from "../components/ui/EnquiryForm";
+import SEO from "../components/SEO";
 
 export default function Home() {
   const featuredProperties = properties.slice(0, 3);
 
   return (
+  <>
+    <SEO
+      title="Commercial Office Space for Rent, Lease & Sale in Hyderabad | SpaceWave"
+      description="SpaceWave is a trusted commercial real estate consultancy in Hyderabad offering premium office spaces for rent, lease and sale. Find plug-and-play offices, warm shell offices, corporate workspaces and investment properties."
+      canonical="https://www.spacewave.in/"
+    />
+
     <div className="page-transition pt-0 ">
       {/* Hero Section */}
       <section
@@ -319,9 +327,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+            </section>
     </div>
-  );
+  </>
+);
 }
 
 // Add this at the bottom of the file (before export default):

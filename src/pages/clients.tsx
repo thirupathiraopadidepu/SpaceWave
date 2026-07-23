@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { LogoStrip } from "../components/LogoStrip";
+import SEO from "../components/SEO";
 
 const clientLogos = [
   "/clientlogos/8.-BACKOFFICE-I-T-SERVICES-INDIA-PRIVATE-LIMITED-logo.png",
@@ -44,6 +45,12 @@ const secondRow = clientLogos.slice(18);
 
 const Clients = () => {
   return (
+    <>
+    <SEO
+  title="Our Clients | SpaceWave Commercial Real Estate"
+  description="Discover the businesses, startups and corporate clients who trust SpaceWave for commercial office spaces, leasing and real estate consulting in Hyderabad."
+  canonical="https://www.spacewave.in/clients"
+/>
     <div
       className="relative text-white min-h-screen bg-cover bg-center"
       style={{ backgroundImage: "url('/clientlogos/clientbg.png')" }}
@@ -196,6 +203,7 @@ const Clients = () => {
       </section>
       <div className="h-[100px]" />
     </div>
+    </>
   );
 };
 

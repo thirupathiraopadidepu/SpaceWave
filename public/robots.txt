@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://spacewave.in/sitemap.xml
+Sitemap: https://www.spacewave.in/sitemap.xml
